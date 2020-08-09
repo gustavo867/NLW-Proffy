@@ -9,7 +9,6 @@ import whatsappIcon from '../../assets/images/icons/whatsapp.png';
 
 import styles from './styles';
 import api from '../../services/api';
-
 export interface Teacher {
   avatar: string;
   bio: string;
@@ -19,7 +18,6 @@ export interface Teacher {
   whatsapp: string;
   id: number;
 }
-
 interface TeacherItemProps {
   teacher: Teacher;
   favorited: boolean;
@@ -57,7 +55,7 @@ const TeacherItem: React.FC<TeacherItemProps> = ({ teacher, favorited }) => {
       setIsFavorited(true);
     }
     await AsyncStorage.setItem('favorites', JSON.stringify(favoritesArray))
-  }
+  } 
 
   return (
     <View style={styles.container}>
@@ -90,9 +88,9 @@ const TeacherItem: React.FC<TeacherItemProps> = ({ teacher, favorited }) => {
               styles.favoriteButton, 
               isFavorited ? styles.favorited : {},
               ]}>
-              { isFavorited
-                ? <Image source={unfavoriteIcon}/>   
-                : <Image source={heartOutlineIcon}/>
+              { isFavorited 
+                ? <Image source={unfavoriteIcon}/> 
+                : <Image source={heartOutlineIcon}/> 
               }     
           </RectButton>
 

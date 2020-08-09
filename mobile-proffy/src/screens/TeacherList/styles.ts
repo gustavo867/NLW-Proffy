@@ -6,6 +6,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#f0f0f7'
   },
 
+  teacherNotFound: {
+    fontFamily: 'Poppins_600SemiBold',
+    fontSize: 20,
+  },
+
   teacherList: {
     marginTop: -40,
   },

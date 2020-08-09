@@ -10,6 +10,7 @@ import studyIcon from '../../assets/images/icons/study.png';
 import giveClassesIcon  from '../../assets/images/icons/give-classes.png';
 import heartIcon from '../../assets/images/icons/heart.png';
 import api from '../../services/api';
+import AsyncStorage from '@react-native-community/async-storage';
 
 const Landing: React.FC = () => {
   const [totalConnections, setTotalConnections] = useState(0);

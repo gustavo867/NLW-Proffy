@@ -129,6 +129,8 @@ const TeacherList: React.FC = () => {
         )}
       </PageHeader>
 
+      {teachers.length === 0 && <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}><Text style={styles.teacherNotFound}>Nenhum professor encontrado 😭</Text></View>}
+
       <ScrollView 
         style={styles.teacherList}
         contentContainerStyle={{
@@ -137,6 +139,7 @@ const TeacherList: React.FC = () => {
         }}
       >
         {teachers.map((teacher: Teacher) => {
+          
           return (
             <TeacherItem 
               key={teacher.id} 
@@ -144,7 +147,7 @@ const TeacherList: React.FC = () => {
               favorited={favorites.includes(teacher.id)}
             />
           )
-        })}
+        })} 
       </ScrollView>
     </View>
   );
