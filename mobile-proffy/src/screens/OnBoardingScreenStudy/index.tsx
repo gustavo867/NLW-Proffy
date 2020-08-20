@@ -1,12 +1,22 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { View, Image, Text, } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 import giveClassesBackgroundImg from '../../assets/images/Background.png'
 import giveClassesIcon from '../../assets/images/icons/dar-aulas.png';
 
 import styles from './styles';
 
+import goIcon from '../../assets/images/icons/Voltar.png';
+import { RectButton } from 'react-native-gesture-handler';
+
 const OnBoardingScreenStudy: React.FC = () => {
+  const { navigate } = useNavigation();
+
+  function handleNavigateToGiveClasses() {
+    navigate('GiveClasses');
+  }
+
   return (
     <View>
       <View style={styles.container}>
@@ -21,7 +31,9 @@ const OnBoardingScreenStudy: React.FC = () => {
           <View style={styles.pages}>
             <View style={[styles.pages, { backgroundColor: '#C1BCCC', }]} />
           </View>
-            <Text style={styles.text}>Arraste para esquerda</Text>
+          <RectButton onPress={handleNavigateToGiveClasses}>
+            <Image source={goIcon}/>
+          </RectButton>
         </View>
       </View>
      </View>

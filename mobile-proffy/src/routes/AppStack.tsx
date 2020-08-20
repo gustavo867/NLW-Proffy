@@ -8,7 +8,7 @@ const { Navigator, Screen } = createStackNavigator();
 import Landing from '../screens/Landing';
 import GiveClasses from '../screens/GiveClasses';
 import StudyTabs from './StudyTabs';
-import Onboarding from '../screens/OnBoarding';
+import OnBoardingStack from './OnboardingStack';
 
  function AppStack() {
   const [IsOnBoardingTrue, setIsOnBoardingTrue] = useState(true);
@@ -25,7 +25,7 @@ import Onboarding from '../screens/OnBoarding';
       <Navigator headerMode="none">
         <Screen 
           name={IsOnBoardingTrue ? 'OnBoarding': 'Landing'} 
-          component={IsOnBoardingTrue ? Onboarding : Landing}
+          component={IsOnBoardingTrue ? OnBoardingStack : Landing}
         />
         <Screen name="GiveClasses" component={GiveClasses}/>
         <Screen name="Study" component={StudyTabs}/>
